@@ -1,0 +1,51 @@
+Tabela "clientes":
+- id_cliente (chave primária)
+- cpf
+- nome
+- endereço
+- sexo
+- telefone
+
+Tabela "veículos":
+- id_veiculo (chave primária)
+- id_cliente (chave estrangeira para a tabela "clientes")
+- placa
+- renavam
+- marca
+- modelo
+- ano
+- cor
+
+
+Tabela "ordens_de_serviço":
+- id_os (chave primária)
+- id_veiculo (chave estrangeira para a tabela "veículos")
+- data
+- hora_inicio
+- hora_fim
+- descricao_problema
+- tipo_pagamento
+- valor_final
+- quilometragem_inicio
+
+Tabela "serviços":
+- id_servico (chave primária)
+- tipo
+- descricao
+- custo
+- tempo_estimado
+
+Tabela "peças":
+- id_peca (chave primária)
+- tipo
+- descricao
+- quantidade_estoque
+- preco_unitario
+
+Tabela "itens_os":
+- id_item (chave primária)
+- id_os (chave estrangeira para a tabela "ordens_de_serviço")
+- id_servico (chave estrangeira para a tabela "serviços")
+- id_peca (chave estrangeira para a tabela "peças")
+- quantidade
+- valor_unitario
